@@ -23,6 +23,9 @@ class FitBitTools:
 
         for food in self.foods:
             food_search_response = self.search_for_foods(food)
+            if len(food_search_response) == 0:
+                print(f"Nothing found for: {food} - nothing registered!")
+                continue
             first_choice = food_search_response[0]
             flag = True
             for row in food_search_response:
